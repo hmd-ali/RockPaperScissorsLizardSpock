@@ -24,7 +24,7 @@
             Score
         },
         props:{
-            score: Number
+            score: Object
         }
     }
 </script>

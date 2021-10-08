@@ -1,7 +1,7 @@
 <template>
     <div class="score" id="score">
         <h1>score</h1>
-        <p> {{ score }}</p>
+        <p> {{ score.p1 }} - {{ score.p2 }}</p>
     </div>
 </template>
 
@@ -9,7 +9,7 @@
     export default {
         name: 'Score',
         props:{
-            score: Number
+            score: Object
         }
     }
 </script>
@@ -24,6 +24,7 @@
         justify-content: center;
         border-radius: 1rem;
         height: 100%;
+        width: 10rem;
     }
     .score h1{
         font-size: 1.5rem;

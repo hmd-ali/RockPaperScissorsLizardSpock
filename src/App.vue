@@ -54,7 +54,7 @@ export default {
           background: 'linear-gradient(180deg, hsl(189, 59%, 53%) 0%, hsl(189, 58%, 57%) 100%)'
         },
       ],
-      score: 0,
+      score: {p1: 0, p2: 0},
       picked: false,
       movePicked: [],
       choiceAI: null,
@@ -84,11 +84,14 @@ export default {
     checkresults(a,b){
       if(a.losesTo.includes(b.id)){
         this.statement = 'Computer Wins!'
+        setTimeout(()=>{
+          this.score.p2 += 1
+        },3000)
       }
       else if(b.losesTo.includes(a.id)){
         this.statement = 'You win!'
         setTimeout(()=>{
-          this.score += 1
+          this.score.p1 += 1
         },3000)
       }
       else{
@@ -101,7 +104,7 @@ export default {
       this.choiceAI = []
     },
     retry(){
-      this.score = 0
+      this.score = {p1: 0, p2: 0}
       this.playAgain()
     }
   }

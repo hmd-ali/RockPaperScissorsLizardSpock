@@ -46,13 +46,9 @@
                         class="results"
                         v-show="!isLoading"
                     >
-                        <div v-if="statement=='It\'s a draw!' || statement == 'You win!'">
+                        <div>
                             <h1>{{ statement }}</h1>
                             <button @click="playAgain">Next</button>
-                        </div>
-                        <div v-else>
-                            <h1>{{ statement }}</h1>
-                            <button @click="retry"> Retry </button>
                         </div>
                     </div>
                 </div>
